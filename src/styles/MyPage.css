@@ -1,0 +1,81 @@
+.Mypage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 393px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 30%;
+  margin-bottom: 5%;
+}
+
+.Mypage-top p {
+  margin-left: 6%;
+  font-size: 32px;
+}
+
+.Mypage-top button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  margin-right: 6%;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.Mypage-top button:hover {
+  color: rgb(255, 255, 255, 0.5);
+}
+
+.Mypage-mid {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+.Myname {
+  margin-top: 4%;
+  margin-bottom: 15%;
+}
+
+.Mypage-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.More-button {
+  margin: 2% 7% 4% auto;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.Mypage-box {
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(0, 0, 0, 0.5);
+  display: flex;
+  margin: 10px auto;
+  width: 80%;
+  padding: 12px 16px;
+  font-size: 22px;
+}
+
+.Mypage-box button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-right: 3%;
+  margin-left: auto;
+  width: 33px;
+  height: 33px;
+}
+
+.More-button:hover {
+  color: rgb(255, 255, 255, 0.5);
+}

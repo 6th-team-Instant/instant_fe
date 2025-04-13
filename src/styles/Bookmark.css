@@ -1,0 +1,36 @@
+.Bookmark-top {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30%;
+  width: 393px;
+  font-family: "Roboto", sans-serif;
+}
+
+.Bookmark-top p {
+  margin-left: 6%;
+  font-size: 32px;
+  margin-bottom: 7%;
+}
+
+.Bookmark-box {
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(0, 0, 0, 0.5);
+  display: flex;
+  margin: 10px auto;
+  width: 80%;
+  padding: 12px 16px;
+  font-size: 22px;
+}
+
+.Bookmark-box button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-right: 3%;
+  margin-left: auto;
+  width: 33px;
+  height: 33px;
+}
