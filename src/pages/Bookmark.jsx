@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Fullbookmark from "../assets/FullBookmark.svg";
 import Emptybookmark from "../assets/EmptyBookmark.svg";
 import "../styles/Bookmark.css";
+import Header from "../components/Header";
 
 function Bookmark() {
   const [bookmarks, setBookmarks] = useState([]);
@@ -22,21 +23,24 @@ function Bookmark() {
   };
 
   return (
-    <div className="Bookmark-top">
-      <p>Bookmark</p>
-      {bookmarks
-        .filter((item) => item.bookmark)
-        .map((item) => (
-          <div className="Bookmark-box" key={item.id}>
-            <span>{item.title}</span>
-            <button onClick={() => toggleBookmark(item.id)}>
-              <img
-                src={item.bookmark ? Fullbookmark : Emptybookmark}
-                alt="bookmark"
-              />
-            </button>
-          </div>
-        ))}
+    <div>
+      <Header />
+      <div className="Bookmark-top">
+        <p>Bookmark</p>
+        {bookmarks
+          .filter((item) => item.bookmark)
+          .map((item) => (
+            <div className="Bookmark-box" key={item.id}>
+              <span>{item.title}</span>
+              <button onClick={() => toggleBookmark(item.id)}>
+                <img
+                  src={item.bookmark ? Fullbookmark : Emptybookmark}
+                  alt="bookmark"
+                />
+              </button>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

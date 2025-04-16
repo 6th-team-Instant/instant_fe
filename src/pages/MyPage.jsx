@@ -6,6 +6,7 @@ import Emptybookmark from "../assets/EmptyBookmark.svg";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import dummyData from "../data/DummyDate";
+import Header from "../components/Header";
 
 function MyPage() {
   const [bookmarks, setBookmarks] = useState([]);
@@ -31,6 +32,7 @@ function MyPage() {
 
   return (
     <div>
+      <Header />
       <div className="Mypage-top">
         <p>My page</p>
         <button>수정</button>

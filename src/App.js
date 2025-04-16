@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Main from "./pages/Main";
 import MyPage from "./pages/MyPage";
 import Bookmark from "./pages/Bookmark";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Main" element={<Main />} />
           <Route path="/MyPage" element={<MyPage />} />
           <Route path="/Bookmark" element={<Bookmark />} />
+          <Route path="/Header" element={<Header />} />
         </Routes>
       </BrowserRouter>
     </div>
