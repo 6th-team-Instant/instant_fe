@@ -1,0 +1,75 @@
+.Login-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Logo {
+  margin-top: 32%;
+}
+
+.Loginbar {
+  margin: 40% 0 4% 0;
+}
+
+.Login-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Id-password {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Id-password input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Id-password input {
+  width: 214px;
+  height: 25px;
+  border-radius: 4px;
+  border: none;
+}
+
+.Login-button {
+  width: 100px;
+  height: 70px;
+  background-color: #8099e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  font-family: "Baloo 2", sans-serif;
+}
+
+.Login-button:hover {
+  background-color: #5a77cc;
+}
+
+.Signup-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 100px;
+  height: 35px;
+  background-color: #55baa2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5%;
+  font-size: 15px;
+  font-family: "Baloo 2", sans-serif;
+}
+
+.Signup-button:hover {
+  background-color: #3ea58f;
+}

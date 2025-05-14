@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.App {
+  font-family: "Baloo 2", sans-serif;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 393px;
+  margin: auto;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 1) 69.9999988079071%,
+    rgba(21, 56, 133, 1) 100%
+  );
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
