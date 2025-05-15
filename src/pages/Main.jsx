@@ -2,13 +2,18 @@ import { useState } from "react";
 import Header from "../components/Header";
 import TabMenu from "../components/TabMenu";
 import "../styles/TabMenu.css";
-import "../styles/MainPage.css"; 
+import "../styles/MainPage.css";
 import Eungtal from "../assets/Eungtal.svg";
 import Bookmarkimg from "../assets/Bookmarkimg.svg";
+import FullBookmarkimg from "../assets/FullBookmarkimg.svg";
 
 function Main() {
   const [activeTab, setActiveTab] = useState("Main");
+  const [bookmarked, setBookmarked] = useState(false);
 
+  const toggleBookmark = () => {
+    setBookmarked(!bookmarked);
+  };
   return (
     <div>
       <Header />
@@ -24,15 +29,19 @@ function Main() {
             </div>
 
             <div className="TextBlock">
-              <p>금요일에 개강을 하는 것에
-              큰 충격을 받은 김응현씨는 
-              그만 다변량 수업을 들어오지
-              않는 큰 실수를 하는데...</p>
-
-              
+              <p>
+                금요일에 개강을 하는 것에 큰 충격을 받은 김응현씨는 그만 다변량
+                수업을 들어오지 않는 큰 실수를 하는데...
+              </p>
             </div>
             <div className="Bookmark">
-              <img src={Bookmarkimg} alt="북마크" className="Bookmarkimgs" />
+              <img
+                src={bookmarked ? FullBookmarkimg : Bookmarkimg}
+                alt="북마크"
+                className="Bookmarkimgs"
+                onClick={toggleBookmark}
+                style={{ cursor: "pointer" }}
+              />
             </div>
           </div>
         )}

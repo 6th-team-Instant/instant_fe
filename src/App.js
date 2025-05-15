@@ -23,7 +23,6 @@ function App() {
           <Route path="/MyPage" element={<MyPage />} />
           <Route path="/Bookmark" element={<Bookmark />} />
           <Route path="/Header" element={<Header />} />
-          <Route path="/" element={<Main />} />
           <Route path="/sports" element={<Sports />} />
           <Route path="/politics" element={<Politics />} />
           <Route path="/entertainments" element={<Entertainments />} />
