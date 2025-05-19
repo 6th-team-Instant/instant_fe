@@ -12,6 +12,7 @@ import Entertainments from "./pages/Entertainments";
 import MyPage from "./pages/MyPage";
 import Bookmark from "./pages/Bookmark";
 import Header from "./components/Header";
+import SignUp from "./pages/SignUp.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/sports" element={<Sports />} />
           <Route path="/politics" element={<Politics />} />
           <Route path="/entertainments" element={<Entertainments />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>

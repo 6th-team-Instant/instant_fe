@@ -20,7 +20,9 @@ function Login() {
           로그인
         </button>
       </div>
-      <button className="Signup-button">회원가입</button>
+      <button className="Signup-button" onClick={() => navigate("/SignUp")}>
+        회원가입
+      </button>
     </div>
   );
 }
