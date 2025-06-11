@@ -1,18 +1,25 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/mousewheel";
 import Header from "../components/Header";
 import TabMenu from "../components/TabMenu";
+import dummyData from "../data/SummyData.jsx";
 import "../styles/TabMenu.css";
 import "../styles/MainPage.css";
-import Eungtal from "../assets/Eungil.svg";
 import Bookmarkimg from "../assets/Bookmarkimg.svg";
 import FullBookmarkimg from "../assets/FullBookmarkimg.svg";
+import LinkIcon from "../assets/Link.svg";
 
 function Main() {
   const [activeTab, setActiveTab] = useState("Main");
-  const [bookmarked, setBookmarked] = useState(false);
+  const [cards, setCards] = useState(dummyData);
 
-  const toggleBookmark = () => {
-    setBookmarked(!bookmarked);
+  const toggleBookmark = (id) => {
+    setCards((prev) =>
+      prev.map((c) => (c.id === id ? { ...c, bookmarked: !c.bookmarked } : c))
+    );
   };
 
   return (
@@ -22,31 +29,43 @@ function Main() {
 
       <div className="ContentArea">
         {activeTab === "Main" && (
-          <div className="PageWrapper">
-            <p className="PageTitle">박지섭의 풋살</p>
-
-            <div className="ImageRow">
-              <img src={Eungtal} alt="응현" className="PreviewImage" />
-            </div>
-
-            <div className="TextBlock">
-              <p>박지섭의 풋살 실력 하락세 컴공 축구를 이끌어갈 수 있나..</p>
-            </div>
-            <div className="Bookmark">
-              <img
-                src={bookmarked ? FullBookmarkimg : Bookmarkimg}
-                alt="북마크"
-                className="Bookmarkimgs"
-                onClick={toggleBookmark}
-                style={{ cursor: "pointer" }}
-              />
-            </div>
-          </div>
+          <Swiper
+            direction="vertical"
+            slidesPerView={1}
+            spaceBetween={0}
+            mousewheel
+            modules={[Mousewheel]}
+            style={{
+              height: "calc(100vh - 56px - 48px)",
+            }}
+          >
+            {cards.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="PageWrapper">
+                  <p className="PageTitle">{item.title}</p>
+                  <div className="TextBlock">
+                    <p style={{ whiteSpace: "pre-wrap" }}>{item.summary}</p>
+                  </div>
+                  <div className="Bookmark">
+                    <img
+                      src={item.bookmarked ? FullBookmarkimg : Bookmarkimg}
+                      alt="북마크"
+                      onClick={() => toggleBookmark(item.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={LinkIcon} alt="공유" className="Link" />
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         )}
-
-        {activeTab === "Sports" && <p>Sports 콘텐츠</p>}
-        {activeTab === "Politics" && <p>Politics 콘텐츠</p>}
-        {activeTab === "Entertainments" && <p>Entertainments 콘텐츠</p>}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Fullbookmark from "../assets/FullBookmark.svg";
 import Emptybookmark from "../assets/EmptyBookmark.svg";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import dummyData from "../data/DummyDate";
+import dummyData from "../data/BummyData.jsx";
 import Header from "../components/Header";
 
 function MyPage() {
@@ -50,7 +50,9 @@ function MyPage() {
           .filter((item) => item.bookmark)
           .map((item) => (
             <div className="Mypage-box" key={item.id}>
-              <span>{item.title}</span>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <span>{item.title}</span>
+              </a>
               <button onClick={() => toggleBookmark(item.id)}>
                 <img
                   src={item.bookmark ? Fullbookmark : Emptybookmark}

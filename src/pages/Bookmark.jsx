@@ -31,7 +31,9 @@ function Bookmark() {
           .filter((item) => item.bookmark)
           .map((item) => (
             <div className="Bookmark-box" key={item.id}>
-              <span>{item.title}</span>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <span>{item.title}</span>
+              </a>
               <button onClick={() => toggleBookmark(item.id)}>
                 <img
                   src={item.bookmark ? Fullbookmark : Emptybookmark}
